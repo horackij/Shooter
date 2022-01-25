@@ -37,6 +37,11 @@ void AShooterCharacter::BeginPlay()
 	UE_LOG(LogTemp, Warning, TEXT("bool myBool: %d"), myBool);
 
 	UE_LOG(LogTemp, Warning, TEXT("int: %d, float: %f, bool: %d"), myInt, myFloat, false);
+
+	FString myString{ TEXT("My string!!!!") };
+	UE_LOG(LogTemp, Warning, TEXT("FString myString: %s"), *myString);
+
+	UE_LOG(LogTemp, Warning, TEXT("Name of Instance: %s"), *GetName());
 }
 
 // Called every frame
