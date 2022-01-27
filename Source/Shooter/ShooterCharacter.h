@@ -35,6 +35,8 @@ protected:
 	*/
 	void LookUpAtRate(float Rate);
 
+	// Called when the fire button is pressed
+	void FireWeapon();
 
 public:	
 	// Called every frame
