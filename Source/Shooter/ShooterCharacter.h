@@ -98,6 +98,14 @@ private:
 	/* Field of view value for when zoomed in */
 	float CameraZoomedFOV;
 
+	/* Current field of view this frame */
+	float CameraCurrentFOV;
+
+	/* Interp speed for zooming when aiming*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
+	float ZoomInterpSpeed;
+
+
 public:
 	/* Returns CameraBoom subobject */
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
