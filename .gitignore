@@ -83,8 +83,18 @@ Content/StarterContent/*
 VSCode Files
 /.vscode/*
 
-#Paragon Content
+#EPIC Content
 Content/ParagonLtBelica
 Content/_Game/Assets
+Content/Audio
+Content/Materials
+Content/Blueprints
+Content/Fx
+Content/Meshes
+Content/Sequences
+Content/Textures
+Content/Maps
+
+Content/_Game/Maps/Factory.umap
 
 
