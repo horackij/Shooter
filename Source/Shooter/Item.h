@@ -53,6 +53,9 @@ protected:
 	// Sets the active stars array of bools based on rarity
 	void SetActiveStars();
 
+	// Sets properties of the Items components based on state
+	void SetItemProperties(EItemState State);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -106,5 +109,5 @@ public:
 
 	FORCEINLINE EItemState GetItemState() const { return ItemState; }
 
-	FORCEINLINE void SetItemState(EItemState State) { ItemState = State; }
+	void SetItemState(EItemState State);
 };
