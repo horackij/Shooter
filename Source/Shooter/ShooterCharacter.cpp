@@ -47,9 +47,9 @@ AShooterCharacter::AShooterCharacter() :
 	ShootTimeDuration(0.05f),
 	bFiringBullet(false),
 	// Automatic fire variables
-	AutomaticFireRate(0.1f),
-	bShouldFire(true),
 	bFireButtonPressed(false),
+	bShouldFire(true),
+	AutomaticFireRate(0.1f),
 	//Item trace variables
 	bShouldTraceForItems(false)
 
