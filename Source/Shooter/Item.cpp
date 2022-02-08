@@ -14,10 +14,12 @@ AItem::AItem():
 	ItemRarity(EItemRarity::EIR_Common),
 	ItemState(EItemState::EIS_Pickup),
 	// Item Interp Variables
-	ZCurveTime(0.7f),
 	ItemInterpStartLocation(FVector(0.f)),
 	CameraTargetLocation(FVector(0.f)),
-	bInterping(false)
+	bInterping(false),
+	ZCurveTime(0.7f),
+	ItemInterpX(0.f),
+	ItemInterpY(0.f)
 
 
 {
@@ -218,6 +220,16 @@ void AItem::ItemInterp(float DeltaTime)
 		const FVector ItemToCamera{ FVector(0.f,0.f, (CameraInterpLocation - ItemLocation).Z) };
 		// scale factor to multiply with curve value
 		const float DeltaZ = ItemToCamera.Size();
+
+		const FVector CurrentLocation{ GetActorLocation() };
+		// Interpolated X Value
+		const float InterpXValue = FMath::FInterpTo(CurrentLocation.X, CameraInterpLocation.X, DeltaTime, 30.0f);
+		// Interpolated Y Value
+		const float InterpYValue = FMath::FInterpTo(CurrentLocation.Y, CameraInterpLocation.Y, DeltaTime, 30.0f);
+
+		//Set X and Y of ItemLocation to Interped values
+		ItemLocation.X = InterpXValue;
+		ItemLocation.Y = InterpYValue;
 
 		//Adding curve value to the Z component of the initial location (scaled by DeltaZ)
 		ItemLocation.Z += CurveValue * DeltaZ;
