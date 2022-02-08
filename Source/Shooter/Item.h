@@ -25,6 +25,7 @@ enum class EItemState : uint8
 	EIS_EquipInterping UMETA(DisplayName = "EquipInterping"),
 	EIS_PickedUp UMETA(DisplayName = "PickedUp"),
 	EIS_Equipped UMETA(DisplayName = "Equipped"),
+	EIS_Falling UMETA(DisplayName = "Falling"),
 	
 	EIS_Max UMETA(DisplayName = "DefaultMAX")
 };
