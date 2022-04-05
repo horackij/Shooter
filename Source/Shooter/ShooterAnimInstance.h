@@ -28,7 +28,7 @@ public:
 	UShooterAnimInstance();
 	
 	UFUNCTION(BlueprintCallable)
-	void UpdateanimationProperties(float DeltaTime);
+	void UpdateAnimationProperties(float DeltaTime);
 
 	virtual void NativeInitializeAnimation() override;
 
@@ -106,4 +106,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Lean, meta = (AllowPrivateAccess = "true"))
 	float YawDelta;
 
+	// True when crouching
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Crouching, meta = (AllowPrivateAccess = "true"))
+	bool bCrouching;
 };
