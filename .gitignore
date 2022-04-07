@@ -103,4 +103,7 @@ Content/ModSci_EngiProps
 Content/ModSciInteriors
 Content/AnimStarterPack
 
+Content/_Game/Character/Animations/Crouching/MixamoCharacter
+Content/_Game/Character/Animations/Crouching/AnimationToRetarget
+
 
