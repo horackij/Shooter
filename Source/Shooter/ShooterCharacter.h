@@ -136,6 +136,17 @@ protected:
 	void ReleaseClip();
 
 	void CrouchButtonPressed();
+<<<<<<< HEAD
+=======
+
+	virtual void Jump() override;
+
+	// Interps capsule half height when crouching/standing
+	void InterpCapsuleHalfHeight(float DeltaTime);
+
+	void Aim();
+	void StopAiming();
+>>>>>>> new
 
 public:
 	// Called every frame
@@ -218,9 +229,11 @@ private:
 	bool bAiming;
 
 	/* Default camera field of view value*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
 	float CameraDefaultFOV;
 
 	/* Field of view value for when zoomed in */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Combat, meta = (AllowPrivateAccess = "true"))
 	float CameraZoomedFOV;
 
 	/* Current field of view this frame */
@@ -332,6 +345,39 @@ private:
 	// true when crouching
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	bool bCrouching;
+<<<<<<< HEAD
+=======
+
+	// Regular movement speed
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float BaseMovementSpeed;
+
+	//Crouch movement speed
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float CrouchMovementSpeed;
+
+	// Current half height of the capsule
+	float CurrentCapsuleHalfHieght;
+
+	// Half height of the capsule when not crouching
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float StandingCapsuleHalfHeight;
+
+	// half height of the capsule when crouching
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float CrouchingCapsuleHalfHeight;
+
+	// Ground Friction while not crouching
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float BaseGroundFriction;
+
+	// Ground friction while crouching
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	float CrouchingGroundFriction;
+
+	// Used for knowing when the Aiming Button is pressed
+	bool bAimingButtonPressed;
+>>>>>>> new
 
 public:
 	/* Returns CameraBoom subobject */
@@ -358,6 +404,9 @@ public:
 
 	FORCEINLINE bool GetCrouching() const { return bCrouching; }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> new
 };
